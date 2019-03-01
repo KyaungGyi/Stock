@@ -17,6 +17,10 @@ namespace Stock
         {
             InitializeComponent();
         }
+        private void Login_Load(object sender, EventArgs e)
+        {
+            btnLogin.Focus();
+        }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -47,5 +51,7 @@ namespace Stock
                 MessageBox.Show("Invalid UserName and Password...!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        
     }
 }

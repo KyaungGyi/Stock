@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +54,41 @@
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
+            // productsToolStripMenuItem
+            // 
+            this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.productsToolStripMenuItem.Text = "Products";
+            this.productsToolStripMenuItem.Click += new System.EventHandler(this.productsToolStripMenuItem_Click);
+            // 
+            // stockToolStripMenuItem
+            // 
+            this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.stockToolStripMenuItem.Text = "Stock";
+            this.stockToolStripMenuItem.Click += new System.EventHandler(this.stockToolStripMenuItem_Click);
+            // 
+            // reportToolStripMenuItem
+            // 
+            this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productListToolStripMenuItem,
+            this.stockListToolStripMenuItem});
+            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.reportToolStripMenuItem.Text = "Report";
+            // 
+            // productListToolStripMenuItem
+            // 
+            this.productListToolStripMenuItem.Name = "productListToolStripMenuItem";
+            this.productListToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.productListToolStripMenuItem.Text = "Product List";
+            // 
+            // stockListToolStripMenuItem
+            // 
+            this.stockListToolStripMenuItem.Name = "stockListToolStripMenuItem";
+            this.stockListToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.stockListToolStripMenuItem.Text = "Stock List";
+            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -69,40 +104,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
-            // 
-            // productsToolStripMenuItem
-            // 
-            this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.productsToolStripMenuItem.Text = "Products";
-            this.productsToolStripMenuItem.Click += new System.EventHandler(this.productsToolStripMenuItem_Click);
-            // 
-            // stockToolStripMenuItem
-            // 
-            this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.stockToolStripMenuItem.Text = "Stock";
-            // 
-            // reportToolStripMenuItem
-            // 
-            this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productListToolStripMenuItem,
-            this.stockListToolStripMenuItem});
-            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.reportToolStripMenuItem.Text = "Report";
-            // 
-            // productListToolStripMenuItem
-            // 
-            this.productListToolStripMenuItem.Name = "productListToolStripMenuItem";
-            this.productListToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.productListToolStripMenuItem.Text = "Product List";
-            // 
-            // stockListToolStripMenuItem
-            // 
-            this.stockListToolStripMenuItem.Name = "stockListToolStripMenuItem";
-            this.stockListToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.stockListToolStripMenuItem.Text = "Stock List";
             // 
             // StockMain
             // 

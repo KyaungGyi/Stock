@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,7 +43,9 @@
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.cbbProductStatus = new System.Windows.Forms.ComboBox();
             this.btnReset = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -146,6 +149,7 @@
             // 
             // cbbProductStatus
             // 
+            this.cbbProductStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbProductStatus.FormattingEnabled = true;
             this.cbbProductStatus.Items.AddRange(new object[] {
             "Active",
@@ -167,6 +171,10 @@
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +194,7 @@
             this.Text = "Products";
             this.Load += new System.EventHandler(this.Products_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +216,6 @@
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.ComboBox cbbProductStatus;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -125,22 +125,26 @@ namespace Stock
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            SqlConnection con = Connection.GetConnection();
-            con.Open();
-            if (IfProductExist(con, txtProductCode.Text))
+            DialogResult dialogResult = MessageBox.Show("Are you sure want to Delete?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
             {
-                var sqlQuery = "DELETE FROM [dbo].[Product] WHERE [ProductCode] = '" + txtProductCode.Text + "'";
-                SqlCommand cmd = new SqlCommand(sqlQuery, con);
-                cmd.ExecuteNonQuery();
-                con.Close();
+                SqlConnection con = Connection.GetConnection();
+                con.Open();
+                if (IfProductExist(con, txtProductCode.Text))
+                {
+                    var sqlQuery = "DELETE FROM [dbo].[Product] WHERE [ProductCode] = '" + txtProductCode.Text + "'";
+                    SqlCommand cmd = new SqlCommand(sqlQuery, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
 
-                ResetRecords();
+                    ResetRecords();
+                }
+                else
+                {
+                    MessageBox.Show("Sorry! Your product code is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                LoadData(); 
             }
-            else
-            {
-                MessageBox.Show("Sorry! Your product code is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            LoadData();
         }
         private void ResetRecords()
         {
@@ -164,8 +168,24 @@ namespace Stock
         private bool Validation()
         {
             bool checkResult = false;
-            if (!string.IsNullOrEmpty(txtProductCode.Text) && !string.IsNullOrEmpty(txtProductName.Text) && !(cbbProductStatus.SelectedIndex < 0))
+            if (string.IsNullOrEmpty(txtProductCode.Text))
             {
+                errorProvider1.Clear();
+                errorProvider1.SetError(txtProductCode, "Product Code is required.");
+            }
+            else if (string.IsNullOrEmpty(txtProductName.Text))
+            {
+                errorProvider1.Clear();
+                errorProvider1.SetError(txtProductName, "Product Name is required.");
+            }
+            else if (cbbProductStatus.SelectedIndex == -1)
+            {
+                errorProvider1.Clear();
+                errorProvider1.SetError(cbbProductStatus, "Select a stutas");
+            }
+            else
+            {
+                errorProvider1.Clear();
                 checkResult = true;
             }
             return checkResult;
